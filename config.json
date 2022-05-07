@@ -60,7 +60,7 @@
     },
 
     "trainer": {
-        "epochs": 80,
+        "epochs": 100,
         "save_dir": "saved/",
         "save_period": 3,
   
@@ -72,6 +72,6 @@
         "log_per_iter": 20,
 
         "val": true,
-        "val_per_epochs": 5
+        "val_per_epochs": 3
     }
 }
