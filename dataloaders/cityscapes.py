@@ -35,8 +35,10 @@ class CityScapesDataset(BaseDataSet):
             label_path = os.path.join(self.root, 'gtCoarse', 'gtCoarse', self.split)
         else:
             img_dir_name = 'leftImg8bit_trainvaltest'
-            label_path = os.path.join(self.root, 'gtFine_trainvaltest', 'gtFine', self.split)
-        image_path = os.path.join(self.root, img_dir_name, 'leftImg8bit', self.split)
+            # label_path = os.path.join(self.root, 'gtFine_trainvaltest', 'gtFine', self.split)
+            label_path = os.path.join(self.root, 'gtFine', self.split)
+        # image_path = os.path.join(self.root, img_dir_name, 'leftImg8bit', self.split)
+        image_path = os.path.join(self.root, 'leftImg8bit', self.split)
         
         # difference_1 = set(os.listdir(image_path)).difference(set(os.listdir(label_path)))
         # difference_2 = set(os.listdir(label_path)).difference(set(os.listdir(image_path)))
