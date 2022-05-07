@@ -6,7 +6,7 @@
     "arch": {
         "type": "SegNet",
         "args": {
-            "backbone": "resnet50",
+            "backbone": "resnet152",
             "freeze_bn": false,
             "freeze_backbone": false
         }

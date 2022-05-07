@@ -1,10 +1,10 @@
 {
-    "name": "PSPNet",
+    "name": "ENet",
     "n_gpu": 1,
     "use_synch_bn": false,
 
     "arch": {
-        "type": "PSPNet",
+        "type": "ENet",
         "args": {
             "backbone": "resnet152",
             "freeze_bn": false,
