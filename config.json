@@ -62,7 +62,7 @@
     "trainer": {
         "epochs": 100,
         "save_dir": "saved/",
-        "save_period": 3,
+        "save_period": 25,
   
         "monitor": "max Mean_IoU",
         "early_stop": 10,
@@ -72,6 +72,6 @@
         "log_per_iter": 20,
 
         "val": true,
-        "val_per_epochs": 3
+        "val_per_epochs": 10
     }
 }
