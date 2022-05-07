@@ -19,7 +19,7 @@ ID_TO_TRAINID = {-1: ignore_label, 0: ignore_label, 1: ignore_label, 2: ignore_l
 
 class CityScapesDataset(BaseDataSet):
     def __init__(self, mode='fine', **kwargs):
-        self.num_classes = 19
+        self.num_classes = 15
         self.mode = mode
         self.palette = palette.CityScpates_palette
         self.id_to_trainId = ID_TO_TRAINID
@@ -29,7 +29,7 @@ class CityScapesDataset(BaseDataSet):
         assert (self.mode == 'fine' and self.split in ['train', 'val']) or \
         (self.mode == 'coarse' and self.split in ['train', 'train_extra', 'val'])
 
-        SUFIX = '_gtFine_labelIds.png'
+        SUFIX = '_gtFine_labelTrainIds.png'
         if self.mode == 'coarse':
             img_dir_name = 'leftImg8bit_trainextra' if self.split == 'train_extra' else 'leftImg8bit_trainvaltest'
             label_path = os.path.join(self.root, 'gtCoarse', 'gtCoarse', self.split)
@@ -37,6 +37,13 @@ class CityScapesDataset(BaseDataSet):
             img_dir_name = 'leftImg8bit_trainvaltest'
             label_path = os.path.join(self.root, 'gtFine_trainvaltest', 'gtFine', self.split)
         image_path = os.path.join(self.root, img_dir_name, 'leftImg8bit', self.split)
+        
+        # difference_1 = set(os.listdir(image_path)).difference(set(os.listdir(label_path)))
+        # difference_2 = set(os.listdir(label_path)).difference(set(os.listdir(image_path)))
+
+        # list_difference = list(difference_1.union(difference_2))
+        # print(list_difference)
+        
         assert os.listdir(image_path) == os.listdir(label_path)
 
         image_paths, label_paths = [], []
