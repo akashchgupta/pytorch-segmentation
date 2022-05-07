@@ -46,7 +46,7 @@ class CityScapesDataset(BaseDataSet):
         # list_difference = list(difference_1.union(difference_2))
         # print(list_difference)
         
-        assert os.listdir(image_path) == os.listdir(label_path)
+        # assert os.listdir(image_path) == os.listdir(label_path)
 
         image_paths, label_paths = [], []
         for city in os.listdir(image_path):
