@@ -6,7 +6,7 @@
     "arch": {
         "type": "ENet",
         "args": {
-            "backbone": "resnet152",
+            "backbone": "resnet18",
             "freeze_bn": false,
             "freeze_backbone": false
         }
