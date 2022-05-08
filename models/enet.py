@@ -8,7 +8,7 @@ from itertools import chain
 class InitalBlock(nn.Module):
     def __init__(self, in_channels, use_prelu=True):
         super(InitalBlock, self).__init__()
-        self.pool = nn.MaxPool2d(kernel_size=2, stride=2, ceil_mode=True)
+        self.pool = nn.MaxbaPool2d(kernel_size=2, stride=2, ceil_mode=True)
         self.conv = nn.Conv2d(in_channels, 16 - in_channels, 3, padding=1, stride=2)
         self.bn = nn.BatchNorm2d(16)
         self.prelu = nn.PReLU(16) if use_prelu else nn.ReLU(inplace=True)
