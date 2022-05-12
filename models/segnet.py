@@ -177,7 +177,8 @@ class LastBottleneck(nn.Module):
 class SegResNet(BaseModel):
     def __init__(self, num_classes, in_channels=3, pretrained=True, freeze_bn=False, **_):
         super(SegResNet, self).__init__()
-        resnet50 = models.resnet50(pretrained=pretrained)
+        resnet50 = models.resnet152(pretrained=pretrained)
+        # resnet50 = models.resnet50(pretrained=pretrained)
         encoder = list(resnet50.children())
         if in_channels != 3:
             encoder[0] = nn.Conv2d(in_channels, 64, kernel_size=3, stride=1, padding=1)
@@ -189,7 +190,8 @@ class SegResNet(BaseModel):
         self.encoder = nn.Sequential(*resnet50_blocks)
 
         # Decoder
-        resnet50_untrained = models.resnet50(pretrained=False)
+        resnet50_untrained = models.resnet152(pretrained=False)
+        # resnet50_untrained = models.resnet50(pretrained=False)
         resnet50_blocks = list(resnet50_untrained.children())[4:-2][::-1]
         decoder = []
         channels = (2048, 1024, 512)
