@@ -43,7 +43,7 @@
     },
 
     "optimizer": {
-        "type": "SGD",
+        "type": "Adam",
         "differential_lr": true,
         "args":{
             "lr": 0.01,
