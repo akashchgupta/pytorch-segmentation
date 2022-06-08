@@ -90,7 +90,8 @@ class Trainer(BaseTrainer):
                                                 epoch, self.total_loss.average, 
                                                 pixAcc, mIoU,
                                                 self.batch_time.average, self.data_time.average,class_iou))
-            
+            print("Class IoU")
+            print(class_iou)
         # METRICS TO TENSORBOARD
         seg_metrics = self._get_seg_metrics()
         for k, v in list(seg_metrics.items())[:-1]: 
