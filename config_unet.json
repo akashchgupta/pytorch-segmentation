@@ -4,7 +4,7 @@
     "use_synch_bn": false,
 
     "arch": {
-        "type": "PSPNet",
+        "type": "UNetResnet",
         "args": {
             "baackbone": "resnet152",
             "freeze_bn": false,
