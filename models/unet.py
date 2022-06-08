@@ -124,7 +124,7 @@ class UNet(BaseModel):
 """
 
 class UNetResnet(BaseModel):
-    def __init__(self, num_classes, in_channels=3, backbone='resnet50', pretrained=True, freeze_bn=False, freeze_backbone=False, **_):
+    def __init__(self, num_classes, in_channels=3, backbone='resnet152', pretrained=True, freeze_bn=False, freeze_backbone=False, **_):
         super(UNetResnet, self).__init__()
         model = getattr(resnet, backbone)(pretrained, norm_layer=nn.BatchNorm2d)
 
