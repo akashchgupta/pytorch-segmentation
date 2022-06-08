@@ -47,8 +47,7 @@
         "differential_lr": true,
         "args":{
             "lr": 0.001,
-            "weight_decay": 1e-4,
-            "momentum": 0.99
+            "weight_decay": 1e-4
         }
     },
 
