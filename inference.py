@@ -85,12 +85,12 @@ def save_images(image, mask, output_path, image_file, palette):
     image_file = os.path.basename(image_file).split('.')[0]
     colorized_mask = colorize_mask(mask, palette)
     colorized_mask.save(os.path.join(output_path, image_file+'.png'))
-    # output_im = Image.new('RGB', (w*2, h))
-    # output_im.paste(image, (0,0))
-    # output_im.paste(colorized_mask, (w,0))
-    # output_im.save(os.path.join(output_path, image_file+'_colorized.png'))
-    # mask_img = Image.fromarray(mask, 'L')
-    # mask_img.save(os.path.join(output_path, image_file+'.png'))
+    output_im = Image.new('RGB', (w*2, h))
+    output_im.paste(image, (0,0))
+    output_im.paste(colorized_mask, (w,0))
+    output_im.save(os.path.join(output_path, image_file+'_colorized.png'))
+    mask_img = Image.fromarray(mask, 'L')
+    mask_img.save(os.path.join(output_path, image_file+'.png'))
 
 def main():
     args = parse_arguments()
